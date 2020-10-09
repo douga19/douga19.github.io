@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Rado Rakotonarivo - Université Sorbonne Paris Nord</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body>
+    <nav id="menu">
+      <ul>
+        <li><a href="index.html#about">[about me]</a></li>
+        <li><a href="index.html#recherche">[researches]</a></li>
+        <li><a href="index.html#publications">[publications]</a></li>
+        <li><a href="index.html#talks">[talks]</a></li>
+        <li><a href="enseignement.html">[teaching]</a></li>
+
+      </ul>
+    </nav>
+    <header class="container">
+      <div class="titre">
+        <div class="crop">
+          <img src="img/me-2.png" alt="me">
+        </div>
+        <div id="desc">
+          <h2>Rado A. Rakotonarivo</h2>
+          <h3>ATER</h3>
+          <h3><i>name@lipn.univ-paris13.fr</i></h3>
+      </div>
+      </div>
+      <div class="presentation" id="about">
+          Hi, I'm Rado Rakotonarivo. My current position is <i>Attaché Temporaire d'Enseignement et de Recherche</i> at <a  href="https://galilee.univ-paris13.fr/">Institut Galilée</a>. I am giving computer science courses beside researches at <a href="http://lipn.univ-paris13.fr/">LIPN</a> (Laboratoire Informatique de Paris Nord) in the University of Sorbonne Paris Nord. In this page you will find a bunch of useful information about me and what I am doing. You can also find my resume <a href="cv.pdf" style="color: blue">here</a> (I hope it is up to date).</span>
+      </div>
+    </header>
+
+    <div class="container" id="recherche">
+      <h2>Researches</h2>
+      <p>
+          <i>From polytopes...</i><br>
+          A polytope is the convex hull of a finite set of points in an euclidian space $R^d$, for instance a triangle is a 2-dimensional polytope. These objects appear in a wide range of mathematical works, both in theoretical and applied contexts. In particular in discrete geometry and linear programing, as the feasible solutions domain of a linear program is a polytope. And solve a linear program with the simplex algorithm consists in running a walk on a graph of a polytope. A class of polytopes of special interest I study is that of <i>lattice (d,k)-polytopes</i>. These polytopes are contained in the hypercube $[0,k]^d$, where <i>k</i> is a positive integer, and their vertices have integer coordinates. Despite the fact that those objects are very common, their combinatorics are still not well understood when the dimension rises.
+      </p>
+      <p>
+          <i>...To random sampling</i><br>
+          A random sampler for combinatorial objects is an algorithm that generates a random object following a desired distribution. Most of the time we use the uniform distribution over the objects with a same size. A random sampler, not only allows to have experimental results, but also enables to test conjectures on the sampled objects. Another purpose is the study of the effectivness of algorithms taking them as inputs. Then in order to better understand the lattice <i>(d,k)</i>-polytopes, the purpose of my works is to build an effective random sampler for them.
+      </p>
+      <p>
+          I mainly work on the lattice polytopes of $R^d$. In particular, it focuses on the combinatorics of the family of the <i>d</i>-dimensional lattice polytopes contained in the $[0,k]^d$ hypercube. Due to their elusive  combinatorics, a direct approach using the symbolic method is out of reach. Hence, we made an original approach based on the description of a graph whose vertex set is the set of $(d,k)$-polytopes. In this graph, there is an edge between two polytopes if we can transform each of them into the other by an elementary move. These elementary moves are local operations performed on the polytopes. The connectedness of this graph made us study an uniform random sampler based on a Markov Chain for the $(d,k)$-polytopes of arbitrary dimension and also permited to obtain exhaustive enumeration algorithms. These are the main results of my PhD Thesis you can get <a href="docs/main.pdf">here</a>.
+      </p>
+
+      <div class="list-holder">
+        <img src="img/enum-2.png" alt="enum">
+        <img src="img/exemple-3.png" alt="exemple">
+      </div>
+      <ul class="list-holder">
+        <li>Enumerating lattice polygons contained in the square (2 x 2) from the triangle S.</li>
+        <li>Counting non-full dimensional polytopes with <i>d+1</i> vertices in the unit cube.</li>
+      </ul>
+
+    </div>
+
+    <div class="container listing" id="publications">
+      <h2>Publications</h2>
+        <ol>
+            <li>
+                <a href="VerticesPrimitiveZonotopes" style="color:blue">"The vertices of primitive zonotopes"</a><br/>
+                 with Antoine Deza and Lionel Pournin.<br/>
+                 <i>To appear in Journal of Contemporary Mathematics</i>.
+             </li>
+
+            <li>
+                <a href="https://doi.org/10.1016/j.jcta.2019.105200" style="color:blue">"Elementary moves on lattice polytopes"</a><br/>
+                 with Julien David and Lionel Pournin.<br/>
+                 <i>Journal of Combinatorial Theory, Series A</i>. 2020.
+             </li>
+            <li>
+              <a href="http://ceur-ws.org/Vol-2113/paper13.pdf" style="color:blue">"A Markov Chain for lattice polytopes"</a><br/>
+               with Julien David and Lionel Pournin.<br/>
+               <i>11th GASCom on random generation of combinatorial structures</i>. 2018.
+           </li>
+          </ol>
+
+    </div>
+
+    <div class="container listing" id="talks">
+      <h2>Talks</h2>
+				<ol>
+          <li>
+						<span>"On the number of lattice (d,k)-polytopes"</span><br/>
+						 LRI, Orsay, France. May 2019.<br/>
+						 Séminaire d'Équipe Graphes, Algorithmes et Combinatoire (GALaC).
+				 </li>
+         <li>
+						<span>"On the number of lattice (d,k)-polytopes"</span><br/>
+						 LABRI, Bordeaux, France. April 2019.<br/>
+						 Séminaire d'Équipe Combinatoire et Algorithmique.
+				 </li>
+         <li>
+           <span>"A Markov Chain for lattice polytopes"</span><br/>
+            Athens, Greece. June 2018.<br/>
+            11th GASCom on random generation of combinatorial structures.
+        </li>
+				<li>
+					<span>"Random sampling of lattice polytopes"</span><br/>
+					 Villetaneuse, France. June 2018.<br/>
+					 Journée scientifique de l'école doctorale Galilée.
+					 <span style="color: orange">Best talk award</span>
+			 </li>
+    </div>
+
+    <span id="back"><a href="#menu">[back to top]</span>
+  </body>
+
+
+</html>

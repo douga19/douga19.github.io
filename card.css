@@ -1,0 +1,15 @@
+.card {
+  background-color: grey;
+  height: 300px;
+  width: 300px;
+}
+
+.img-name img {
+    width: 25%;
+    border-radius: 50%;
+}
+
+.img-name {
+  display: flex;
+  justify-content: space-around;
+}
