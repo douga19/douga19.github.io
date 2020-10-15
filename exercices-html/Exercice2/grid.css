@@ -1,0 +1,51 @@
+p {
+  border: 2px solid #ffa94d;
+  border-radius: 5px;
+  background-color: #ffd8a8;
+  padding: 1em;
+  color: #d9480f;
+  margin:0;
+}
+
+/*** On indique dans quelle zone doit être affiché chaque article ***/
+.paragraphe1{ grid-area:p1;}
+.paragraphe2{ grid-area:p2;}
+.paragraphe3{ grid-area:p3;}
+.paragraphe4{ grid-area:p4;}
+.paragraphe5{ grid-area:p5;}
+.paragraphe6{ grid-area:p6;}
+
+/*** On définit les zones de la grille ***/
+section{
+ display:grid;
+ /* grid-template-columns:1fr 1fr 1fr; */
+ grid-template-columns: repeat(8,1fr);
+ /* grid-template-areas:
+  "p5 p2 p3"
+  "p1 p6 p4"; */
+
+ /* grid-template-areas:
+  "p4 p5 p5"
+  "p2 .  p6"
+  "p2 p1 p3" ; */
+
+
+/*  grid-template-areas:
+  "p1 p3  p3"
+  "p2 p3  p3"
+  "p4 p5  p6" ;
+ */
+
+ /* Question 4 */
+ /* grid-template-areas:
+ "p1 p1 . "
+ ".  p2 p2"
+ "p3 p3 p4"
+ "p5 .  p6"; */
+
+ /* Question 5 */
+ grid-template-areas:
+ "p1 p1 . . . . p6 p6 "
+ ". p2 p2 . . p5 p5 . "
+ ". . p3 p3 p4 p4 . . "
+}
