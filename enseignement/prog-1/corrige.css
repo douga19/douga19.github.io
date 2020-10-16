@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime&family=Ubuntu+Mono&display=swap');
+
+.tips li {
+  list-style-image: url("bulb-icon.png");
+}
+
+em {
+  color: white;
+  background-color: #34495e;
+  padding: .2em;
+  border-radius: 3px;
+  font-style: normal;
+  font-family: 'Courier Prime', monospace;
+}
+
+pre {
+  font-family: 'Ubuntu Mono', monospace;
+}
+
+.trace, .algo {
+  background: #f8f8f8;
+  overflow:auto;
+  width:auto;
+  border:solid gray;
+  border-width:.1em .1em .1em .8em;
+  padding:.2em .6em;
+  margin: 0;
+  line-height: 125%;
+}

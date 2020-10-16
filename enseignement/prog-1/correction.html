@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Programmation 1</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="corrige.css">
+  </head>
+
+    <body>
+      <div class="container" id="recherche">
+        <h2>Éléments de correction pour les TD de programmation 1</h2>
+        <p>Vous trouverez les énoncés sur le moodle du cours <a href="https://moodlelms.univ-paris13.fr/course/view.php?id=1394">ici</a></p>
+        <section>
+          <h3>TD 2 : premiers pas en C</h3>
+        <div class="correction">
+            <h4>1. Identificateurs</h4>
+
+            <ul class="tips">
+              <li>Un <em>identificateur</em> en C sert à identifier une variable (mais pas que ... on verra plus tard qu'il peut aussi à identifier autre chose qu'une variable), ou plus simplement la nommer. Il renseigne au programme à quel endroit de la mémoire récupérer la valeur de la variable qu'il identifie.</li>
+              <li>Il est donc important de bien nommer nos variables. Pour cela il existe quelques règles à respecter :
+                <ul>
+                  <li>Un identificateur doit être une suite de lettres (sans caractère accentué) et/ou de chiffres, l'unique autre caractère autorisé est l'underscore : <em>'_'</em>.</li>
+                  <li>Un identificateur doit obligatoirement commencer par une lettre, mais peut également commencer par un underscore.</li>
+                  <li>Un identificateur ne peut être un mot-clé du langage (par exemple: int ou main ne sont pas valides)</li>
+                </ul>
+              </li>
+            </ul>
+            <p>Donc ici <em>rendez_vous</em> est valide tandis que <em>1par1</em> ne l'est pas car commence par un chiffre et <em>else</em> non plus puisque c'est un mot-clé du langage.</p>
+        </div>
+
+          <div class="correction">
+            <h4>2. Déclaration et affectation de variables impératives</h4>
+            <ul class="tips">
+              <li>Une <em>affectation</em> de variable signifie donner/assigner une valeur à une variable.</li>
+              <li>Le signe de l'affectation en C est le signe <em>'='</em>. La partie à gauche du signe d'affectation doit désigner une variable tandis que celle à droite est une expression dont la valeur sera évaluée et affectée dans la variable de gauche</li>
+            </ul>
+            <p>Du coup pour la question 1, j'ai mis en commentaire ce que fait le programme.</p>
+            <div class="code">
+              <!-- HTML generated using hilite.me --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #BC7A00">#include &lt;stdlib.h&gt;</span>
+<span style="color: #BC7A00">#include &lt;stdio.h&gt;</span>
+
+<span style="color: #B00040">int</span> <span style="color: #0000FF">main</span>() {
+
+  <span style="color: #B00040">int</span> x; <span style="color: #408080; font-style: italic">//déclaration d&#39;un variable de type entière x</span>
+  x <span style="color: #666666">=</span> <span style="color: #666666">3</span>; <span style="color: #408080; font-style: italic">//affectation de la valeur 3 dans x</span>
+  x <span style="color: #666666">=</span> x <span style="color: #666666">+</span> <span style="color: #666666">1</span>; <span style="color: #408080; font-style: italic">//affectation de la dernière valeur de x plus 1 dans x </span>
+  printf(<span style="color: #BA2121">&quot;x = %d</span><span style="color: #BB6622; font-weight: bold">\n</span><span style="color: #BA2121">&quot;</span>, x); <span style="color: #408080; font-style: italic">//affiche à l&#39;écran x = 4</span>
+
+  <span style="color: #008000; font-weight: bold">return</span> EXIT_SUCCESS;
+}
+</pre></td></tr></table></div>
+
+            </div>
+            <h5>Trace d'un programme :</h5>
+            <p>Il s'agit de faire une simulation d'execution du programme dans un tableau : c'est-à-dire regarder ligne par ligne quels sont les valeurs successives que prennent nos variables. On peut également afficher ce qui sort à l'écran.</p>
+            <pre class="trace">
+              lignes | x | Sortie écran
+              -----------------------------
+                 6   | ? |
+                 7   | 3 |
+                 8   | 4 |
+                 9   |   | x = 4
+              -----------------------------
+                11   | Renvoie EXIT_SUCCESS
+            </pre>
+          </div>
+
+          <div class="correction">
+            <h3>3. Ecriture d'un programme</h3>
+            <ul class="tips">
+              <li>On va procéder à peu près de cette manière pour tout le cours. Pour chaque problème donné en TD: proposer un algorithme, écrire en C le programme correspondant, puis en faire la trace.</li>
+              <li>Écrire un algorithme revient à écrire des phrases en français qui décrit les étapes à suivre pour résoudre le problème.</li>
+              <li>Un algorithme peut prendre quelque chose en entrée et renvoyer quelque chose en sortie. Par exemple un algorithme de tri peut prendre un tableau en entrée et renvoyer un tableau trié. Mais il peut également ne rien prendre en entrée ni rien renvoyer en sortie. Par exemple un algorithme qui permet d'afficher 100 fois le mot "bonjour". Il faut faire la différence entre <em>Renvoyer</em> et <em>Afficher</em>.</li>
+            </ul>
+            <p>Dans notre exercice, l'algorithme ne prend rien en entrée car la valeur dont ont va calculer le carré et le cube sera directement initialiser dans notre algo. Il ne renvoie rien en sortie, on affichera juste un résultat.</p>
+            <pre class="algo">
+              Algorithme : Calcule le carré et le cube d'une valeur contenue dans une variable
+              Entrées : Rien
+              Sorties : Rien
+              début:
+              	soit x un entier, carre un entier, cube un entier
+              	x <- 2
+              	carre <- x * x
+              	cube <- carre * x
+              	afficher ("x^2 = carre et x^3 = cube")
+              :fin
+            </pre>
+          </div>
+          <h5>Code en C</h5>
+          <p>Il s'agit ici de transcrire ligne par ligne notre algorithme en langage C.</p>
+          <div class="code">
+            <!-- HTML generated using hilite.me --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #BC7A00">#include&lt;stdio.h&gt;</span>
+<span style="color: #BC7A00">#include&lt;stdlib.h&gt;</span>
+
+<span style="color: #B00040">int</span> <span style="color: #0000FF">main</span>() {
+  <span style="color: #B00040">int</span> x, carre, cube;
+  x <span style="color: #666666">=</span> <span style="color: #666666">2</span>;
+  carre <span style="color: #666666">=</span> x <span style="color: #666666">*</span> x;
+  cube <span style="color: #666666">=</span> carre <span style="color: #666666">*</span> x;
+  printf(<span style="color: #BA2121">&quot;x^2 = %d et x^3 = %d&quot;</span>, carre, cube)
+  <span style="color: #008000; font-weight: bold">return</span> EXIT_SUCCESS;
+}
+</pre></td></tr></table></div>
+
+          </div>
+          <h5>Trace du programme</h5>
+          <p>Je vous laisse le soin de faire la trace du programme :).</p>
+        </section>
+      </div>
+    </body>
+
+  </html>
