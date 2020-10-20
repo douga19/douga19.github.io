@@ -11,7 +11,7 @@
       <div class="container" id="recherche">
         <h2>Éléments de correction pour les TD de programmation 1</h2>
         <p>Vous trouverez les énoncés sur le moodle du cours <a href="https://moodlelms.univ-paris13.fr/course/view.php?id=1394">ici</a></p>
-        <section>
+        <section id="td2">
           <h3>TD 2 : premiers pas en C</h3>
         <div class="correction">
             <h4>1. Identificateurs</h4>
@@ -128,6 +128,102 @@
           <h5>Trace du programme</h5>
           <p>Je vous laisse le soin de faire la trace du programme :).</p>
         </section>
+
+        <section id = "td3">
+          <h2>TD 3 exercices introductifs sur les variables impératives, structure de contrôle <i>if</i> et l'itération <i>for</i></h2>
+          <h3>1. Expressions</h3>
+          <p>Il s'agir ici de regarder la <em>priorité</em> des opérations à effectuer. De manière générale, s'il n'y a pas d'ambiguïté, les parenthèses peuvent être enlevées.</p>
+          <ul class="tips">
+            <li>Les opérations arithmétiques priment par rapport à l'affectation : l'expression à droite du <em>=</em> est d'abord évaluée avant de l'assignée à la variable <em>a</em>.</li>
+            <li>La multiplication <em>*</em> prime par rapport à l'addition <em>+</em>.</li>
+            <li>La division <em>/</em> prime par rapport à l'addition <em>+</em>.</li>
+            <li>L'incrémentation <em>++</em> prime par rapport à la multiplication <em>*</em> qui lui par la suite par rapport à l'addition <em>+</em>.</li>
+          </ul>
+          <p>On fait la remarque suivante par rapport à la division <em>/</em> qui est ici une division entière : si <em>x</em> et <em>y</em> sont tous les deux des entiers, alors la division <em>x/y</em> est une <strong>division entière ou division euclidienne</strong> (plus de détails <a href="https://fr.wikipedia.org/wiki/Division_euclidienne">ici</a>). Le résultat admis est le <em>quotient euclidien</em>. Du coup ici, si <em>x = 3</em> et <em>y = 5</em>, le résultat de la division <em>x/y</em> vaut <em>0</em>.</p>
+
+          <p>À vous de jouer.</p>
+
+          <h3>2. Execution conditionnelle d'instructions : <i>if</i></h3>
+          <p>En programmation impérative, les instructions sont executées ligne par ligne et les unes à la suite des autres. On peut cependant <em>conditionner</em> l'execution d'une certaine instruction ou d'un certain <em>bloc d'instructions</em> (en C, les blocs d'instructions sont tout simplement une suite d'instructions délimitée par des accolades <em>{ }</em>). C'est-à-dire que si une certaine condition est vérifiée, on choisira d'executer un bloc plutôt qu'un autre. La <em>structure de contrôle if</em> permet de faire cela.</p>
+          <p>Voyons cela de plus près avec notre exercice.</p>
+          <pre class="algo">
+            debut:                                   int main() {
+              age = 19                                  int age = 19;
+              si (age >= 18) alors:                     if (age >= 18) {
+                afficher "vous êtes majeur"               printf("vous êtes majeur\n");
+              sinon:                                    } else {
+                afficher "vous êtes mineur"               printf("vous êtes mineur\n");
+              fin si                                    }
+            :fin                                        return EXIT_SUCCESS;
+                                                      }
+          </pre>
+          <ul class="tips">
+            <li>Ici, si la <em>age >= 18</em> est vérifiée, on affichera <em>"vous êtes majeur"</em> et dans le cas contraire, on affichera <em>"vous êtes mineur"</em>.</li>
+            <li>La condition du <em>if</em> a une valeur <em>booléenne</em>, c'ets-à-dire vrai ou faux.</li>
+            <li>Dans la condition d'un <em>if</em> pour vérifier l'égalité de deux valeur on utilise l'opérateur <em>==</em>.</li>
+            <li>On peut combiner plusieurs conditions en utilisant les opérateurs logiques <em>ET : &&</em>, <em>OU : ||</em> et la <em>NEGATION : !</em></li>
+            <li>Il est possible d'<em>imbriquer des if</em> : mettre un <em>if</em> dans le bloc d'un autre <em>if</em>.</li>
+          </ul>
+
+          <h3>3. Itération : l'instrucion <i>for</i></h3>
+          <p>On voudrait maintenant pouvoir répéter un bloc d'instructions, ou en d'autres termes répéter un certain nombre de fois les mêmes instruction. Pour cela, on utilise des <em>boucles</em>. Par exemple pour afficher 5 fois le mot "Bonjour", on mettra l'instruction <code>printf("Bonjour\n");</code> à l'intérieur d'une boucle <em>for</em>.</p>
+          <p><em>Une itération</em> correspond à <em>une execution</em>, d'un bloc d'instruction dans une boucle : si l'on veut répéter 5 fois, on aura 5 itérations.</p>
+          <ul class="tips">
+            <li>On utilise une variable de boucle pour compter le nombre d'itération à effectuer. On nomme souvent cette variable <code>i</code>, mais n'importe quel identificateur marche bien évidement.</li>
+            <li>Très souvent la première itération est l'<em>itération 0</em>, càd <code>i = 0</code>.</li>
+            <li>À la fin de chaque itération, on va donc <em>incrémenter</em> notre variable de boucle : <code>i++</code> ou <code>i = i + 1</code>.</li>
+            <li>Pour ne pas boucler indéfiniment, il nous faut spécifier une condition d'arret. Dans notre exemple si l'on veut 5 itérations, on arrêtera de boucler (on sortira de la boucle) dès que <code>i >= 5</code>. On peut également dire que l'on restera dans la boucle tant que <code>i < 5</code>.</li>
+          </ul>
+
+          <p>Voyons alors comment utiliser la boucle <code>for</code> avec tout ce que l'on a appris. Le principe du l'exercice du TD est exactement le même ;).</p>
+
+          <div class="code">
+            <!-- HTML generated using hilite.me --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #666666">12</span>  <span style="color: #408080; font-style: italic">// debut du programme...</span>
+<span style="color: #666666">13</span>  <span style="color: #B00040">int</span> i; <span style="color: #408080; font-style: italic">// On déclare notre variable de boucle</span>
+<span style="color: #666666">14</span>  <span style="color: #008000; font-weight: bold">for</span> (i <span style="color: #666666">=</span> <span style="color: #666666">0</span>; i <span style="color: #666666">&lt;</span> <span style="color: #666666">5</span>; i<span style="color: #666666">++</span>) {
+<span style="color: #666666">15</span>    printf(<span style="color: #BA2121">&quot;Bonjour</span><span style="color: #BB6622; font-weight: bold">\n</span><span style="color: #BA2121">&quot;</span>);
+<span style="color: #666666">16</span>  }
+<span style="color: #666666">17</span>  printf(<span style="color: #BA2121">&quot;A la fin de la boucle i vaut %d</span><span style="color: #BB6622; font-weight: bold">\n</span><span style="color: #BA2121">&quot;</span>, i);
+<span style="color: #666666">18</span>  <span style="color: #408080; font-style: italic">// suite du programme...</span>
+</pre></div>
+
+          </div>
+          <p>Ainsi, on est maintenant capable d'expliquer chaque argument de la boucle <code>for</code>.</p>
+          <ul class="tips">
+            <li>Le premier argument <code>i = 0</code> permet d'initialiser notre variable de boucle.</li>
+            <li>Le deuxième argument <code>i < 5</code> est une expression booléenne qui indique que si cette condition est vraie, on reste dans la boucle et on continue avec une nouvelle itération. Sinon on sort de la boucle et on continue l'execution du programme directement après notre boucle (ici à la ligne <code>17</code>)</li>
+            <li>Le dernier argument <code>i++</code> sert à incrémenter notre variable de boucle : on passe à l'itération numéro <code>i+1</code>. On va considérer que cette instrucion est executée en dernier dans le bloc de notre boucle càd à la ligne <code>16</code>.</li>
+          </ul>
+
+          <h4>Trace du programme</h4>
+          <pre class="trace">
+            lignes | i | Affichage (sortie écran)
+            -------------------------------------
+            13     | ? |
+            14     | 0 |
+            15     |   | Bonjour
+            16     | 1 |
+            15     |   | Bonjour
+            16     | 2 |
+            15     |   | Bonjour
+            16     | 3 |
+            15     |   | Bonjour
+            16     | 4 |
+            15     |   | Bonjour
+            16     | 5 |
+            17     |   | A la fin de la boucle i vaut 5
+          </pre>
+          <p>Quand <code>i</code> vaudra <code>5</code>, la condition d'arret <code>i < 5</code> n'est plus vérifiée du coup on sort alors de notre boucle, et la valeur de <code>i</code> à la sortie est donc <code>5</code>.</p>
+
+          <ul class="tips">
+            <li>On peut évidement initialiser la variable de boucle à <code>1</code>.</li>
+            <li>On peut également avoir un <em>pas d'incrémentation</em> quelconque. Càd on peut incrémenter la variable de boucle de <code>2, 3, ...</code> selon notre convenance : dans ce cas on écrira dans le troisième argument du <code>for</code> soit <code>i = i + 2</code> ou <code>i = i + 3</code> etc.</li>
+            <li>On peut aussi imbriquer des boucles <code>for</code>. Cependant il faudra bien faire attention à bien initialiser et incrémenter chaque variable de boucle.</li>
+          </ul>
+
+          <p>Pour le reste ce sera à vous de jouer :).</p>
+        </section>
+
       </div>
     </body>
 

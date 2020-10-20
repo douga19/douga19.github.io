@@ -6,24 +6,27 @@
 
 em {
   color: white;
-  background-color: #34495e;
+  background-color: rgba(52, 73, 94,0.7);
   padding: .2em;
   border-radius: 3px;
   font-style: normal;
   font-family: 'Courier Prime', monospace;
 }
 
+code {
+  color: white;
+  background-color: rgba(155, 89, 182,.7);
+  padding: .2em;
+  border-radius: 3px;
+  font-style: normal;
+  font-family: 'Courier Prime', monospace;
+}
+
+
 pre {
   font-family: 'Ubuntu Mono', monospace;
 }
 
-.trace, .algo {
-  background: #f8f8f8;
-  overflow:auto;
-  width:auto;
-  border:solid gray;
-  border-width:.1em .1em .1em .8em;
-  padding:.2em .6em;
-  margin: 0;
-  line-height: 125%;
+#td2 {
+  display: none;
 }
